@@ -2,6 +2,10 @@ from flask import Flask
 from flask import render_template
 app = Flask(__name__)
 
+# export FLASK_APP=market.py
+# export FLASK_DEBUG=1
+# flask run
+
 @app.route('/')
 @app.route('/home')
 def home_page():

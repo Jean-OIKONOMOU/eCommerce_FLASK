@@ -3,4 +3,6 @@
 First ever project in Python (and Flask). It's an eCommerce platform.
 
 # What technologies does it use ?
+
 - Flask
+- Bootstrap for simplicity during the development process
