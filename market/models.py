@@ -1,3 +1,6 @@
+from market import db
+
+
 # WARNING : after creating your model you should go in a Python shell and type 'from market import db' then 'db.create_all()'. Market being the value of __name__. This creates an SQL db.
 class Item(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
