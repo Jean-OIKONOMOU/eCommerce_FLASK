@@ -11,9 +11,20 @@ Register
 <h1 class="jumbotron">Register Form</h1>
 <section class="container">
     <form class="form-register" action="POST" onsubmit="return false">
+        <h1 class="font-weight-normal h3 mb-3">Please create your account</h1>
         {{ form.username.label() }}
-        {{ form.username(class="form-control", placeholder="User Name") }}
-        <button type="submit">click me</button>
+        {{ form.username(class="form-control mb-3", placeholder="User Name") }}
+
+        {{ form.email_address.label() }}
+        {{ form.email_address(class="form-control mb-3", placeholder="Email Address") }}
+
+        {{ form.password1.label() }}
+        {{ form.password1(class="form-control mb-3", placeholder="Password") }}
+
+        {{ form.password2.label() }}
+        {{ form.password2(class="form-control mb-3", placeholder="Verify Password") }}
+
+        {{ form.submit(class="btn btn-lg btn-block btn-primary")}}
     </form>
 </section>
 
