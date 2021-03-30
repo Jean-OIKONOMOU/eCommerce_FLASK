@@ -2,8 +2,9 @@ from market import db
 
 
 # WARNING : after creating your model you should go in a Python shell and type
-# 'from market import db' then 'db.create_all()'.
+# 'from market.models import db' then 'db.create_all()'.
 # Market being the value of __name__. This creates an SQL db.
+# To play around import the classes herein in the python cmd line.
 class User(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     username = db.Column(db.String(length=30), nullable=False, unique=True)
@@ -32,3 +33,6 @@ class Item(db.Model):
 
     def __repr__(self):
         return f'Item {self.name}'
+
+
+# sample query with sqlAlchemy item1.owner = User.query.filter_by(username='JC').first().id
