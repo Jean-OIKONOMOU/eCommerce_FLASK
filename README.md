@@ -7,4 +7,5 @@ First ever project in Python (and Flask). It's an eCommerce platform.
 - Flask (which itself includes other tools such as Jinja)
 - SQLAlchemy for that sweet, sweet, database management and creation !
 - DBeaver for easy and blazingly fast queries.
-- Bootstrap for simplicity during the development process
+- Bootstrap for simplicity during the development process.
+- WTForms for easy forms.

@@ -8,10 +8,11 @@ Register
 <!-- To test any kind of page that does a POST request you must have a CSRF Key.
     To do so you must open the terminal, go into Python, import os, os.urandom(12).hex()
     then app.config['SECRET_KEY'] = randomHEXString (within your __init__.py)-->
-<h1 class="jumbotron">Register Form</h1>
+<h1 class="jumbotron bg-transparent">Register Form</h1>
 <section class="container">
-    <form class="form-register" action="POST" onsubmit="return false">
-        <h1 class="font-weight-normal h3 mb-3">Please create your account</h1>
+    <form method="POST" class="form-register">
+        {{ form.hidden_tag() }}
+        <!-- This protects us from CSRF attacks -->
         {{ form.username.label() }}
         {{ form.username(class="form-control mb-3", placeholder="User Name") }}
 
