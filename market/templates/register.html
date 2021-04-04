@@ -14,7 +14,7 @@ Register
         {{ form.hidden_tag() }}
         <!-- This protects us from CSRF attacks -->
         {{ form.username.label() }}
-        {{ form.username(class="form-control mb-3", placeholder="User Name") }}
+        {{ form.username(class="form-control mb-3", placeholder="Username") }}
 
         {{ form.email_address.label() }}
         {{ form.email_address(class="form-control mb-3", placeholder="Email Address") }}
@@ -24,6 +24,11 @@ Register
 
         {{ form.password2.label() }}
         {{ form.password2(class="form-control mb-3", placeholder="Verify Password") }}
+
+        <div class="checkbox mb-3">
+            <h6>Already have an account ?</h6>
+            <a href="{{ url_for('login_page') }}" class="btn btn-sm btn-secondary">Login</a>
+        </div>
 
         {{ form.submit(class="btn btn-lg btn-block btn-primary")}}
     </form>

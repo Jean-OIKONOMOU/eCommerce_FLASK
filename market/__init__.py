@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
-
+from flask_login import LoginManager
 # the app is this file
 app = Flask(__name__)
 
@@ -12,5 +12,6 @@ app.config['SECRET_KEY'] = '80d8f791fa2ce3b7f4dc347f'
 # thid line links the db to this file
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
+login_manager = LoginManager(app)
 
 from market import routes

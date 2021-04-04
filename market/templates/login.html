@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Login Page
+{% endblock %}
+
+{% block content %}
+{% if error %}
+<div class="alert alert-{{ category }}">{{error}}
+    <button type="button" class="m1-2 mb-1 close" data-dismiss="alert" aria-label="close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endif %}
+<h1 class="jumbotron bg-transparent">Your Page!</h1>
+<section class="container">
+    <form method="POST" class="form-signin">
+        {{ form.hidden_tag() }}
+        <!-- This protects us from CSRF attacks -->
+        {{ form.username.label() }}
+        {{ form.username(class="form-control mb-3", placeholder="Username") }}
+
+        {{ form.password.label() }}
+        {{ form.password(class="form-control mb-3", placeholder="Password") }}
+
+        <div class="checkbox mb-3">
+            <h6>Do not have an account ?</h6>
+            <a href="{{ url_for('register_page') }}" class="btn btn-sm btn-secondary">Register</a>
+        </div>
+
+        {{ form.submit(class="btn btn-lg btn-block btn-primary")}}
+    </form>
+</section>
+{% endblock %}
