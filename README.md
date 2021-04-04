@@ -9,3 +9,4 @@ First ever project in Python (and Flask). It's an eCommerce platform.
 - DBeaver for easy and blazingly fast queries.
 - Bootstrap for simplicity during the development process.
 - WTForms for easy forms.
+- flask_bvrypt for crypting passwords.

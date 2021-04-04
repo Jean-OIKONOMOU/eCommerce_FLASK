@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import Bcrypt
 
 # the app is this file
 app = Flask(__name__)
@@ -10,5 +11,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///market.db'
 app.config['SECRET_KEY'] = '80d8f791fa2ce3b7f4dc347f'
 # thid line links the db to this file
 db = SQLAlchemy(app)
+bcrypt = Bcrypt(app)
 
 from market import routes
