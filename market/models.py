@@ -22,13 +22,13 @@ class User(db.Model, UserMixin):
     budget = db.Column(db.Integer(), nullable=False, default=1000)
     items = db.relationship('Item', backref='owned_user', lazy=True)
 
-    # this shit doesn't work !
     @property
     def prettier_budget(self):
         if len(str(self.budget)) >= 4:
-            return f'{str(self.budget)[:-3]},{str(self.budget)[-3:]}$'
+            number_with_commas = "{:,}".format(self.budget)
+            return number_with_commas
         else:
-            return f"{self.budget}$"
+            return self.budget
 
     @property
     def password(self):

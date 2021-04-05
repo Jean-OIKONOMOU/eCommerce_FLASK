@@ -5,42 +5,52 @@ Market
 {% endblock %}
 
 {% block content %}
-<div class="jumbotron bg-transparent">
-    <h1>Market Page</h1>
+{% include 'includes/item_modals.html' %}
+<div class="row m-1">
+    <div class="col-8">
+        <h2>Store Items</h2>
+        <p>Click on an Item to put it in your Basket</p>
+        <table class="table table-hover table-dark">
+            <thead>
+                <tr>
+                    <!-- Your Columns HERE -->
+                    <th scope="col">
+                        ID
+                    </th>
+                    <th scope="col">
+                        Name
+                    </th>
+                    <th scope="col">
+                        Barcode
+                    </th>
+                    <th scope="col">
+                        Price
+                    </th>
+                    <th scope="col">Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.barcode}}</td>
+                    <td>{{item.price}} $</td>
+                    <td>
+                        <button class="btn btn-outline btn-info" data-toggle="modal" data-target="#exampleModal">More
+                            info</button>
+                        <button class="btn btn-outline btn-success">Purchase this item</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="col-4">
+        <h2>Basket Items</h2>
+        <p>Click on an Item to put it back</p>
+    </div>
+
 </div>
 
-<table class="table table-hover table-dark">
-    <thead>
-        <tr>
-            <!-- Your Columns HERE -->
-            <th scope="col">
-                ID
-            </th>
-            <th scope="col">
-                Name
-            </th>
-            <th scope="col">
-                Barcode
-            </th>
-            <th scope="col">
-                Price
-            </th>
-            <th scope="col">Options</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for item in items %}
-        <tr>
-            <td>{{item.id}}</td>
-            <td>{{item.name}}</td>
-            <td>{{item.barcode}}</td>
-            <td>{{item.price}} $</td>
-            <td>
-                <button class="btn btn-outline btn-info">More info</button>
-                <button class="btn btn-outline btn-success">Purchase this item</button>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
 {% endblock %}
