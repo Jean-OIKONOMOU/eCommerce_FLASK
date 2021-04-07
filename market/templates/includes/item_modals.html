@@ -1,4 +1,4 @@
-<!-- Modal -->
+<!-- Modal More Info-->
 <div class="modal fade" id="exampleModal-{{ item.id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog">
@@ -17,17 +17,17 @@
     </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="purchaseModal-{{ item.id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+<!-- Modal Buy -->
+<div class="modal fade" id="purchaseModal-{{ item.id }}" tabindex="-1" aria-labelledby="purchaseModalLabel"
     aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content bg-dark">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Purchase Confirmation</h5>
+                <h5 class="modal-title" id="purchaseModalLabel">Purchase Confirmation</h5>
                 <button type="button" class="btn-close" datax-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Are you sure you want to buy {{ item.name }} for {{ item.price }} ?
+                Are you sure you want to buy {{ item.name }} for {{ item.price }}$ ?
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
