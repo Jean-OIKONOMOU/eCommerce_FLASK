@@ -5,7 +5,7 @@
         <div class="modal-content bg-dark">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">{{ item.name }}</h5>
-                <button type="button" class="btn-close" datax-dismiss="modal" aria-label="Close"></button>
+                <!-- <button type="button" class="btn-close" datax-dismiss="modal" aria-label="Close"></button> -->
             </div>
             <div class="modal-body">
                 {{ item.description }}
@@ -24,12 +24,18 @@
         <div class="modal-content bg-dark">
             <div class="modal-header">
                 <h5 class="modal-title" id="purchaseModalLabel">Purchase Confirmation</h5>
-                <button type="button" class="btn-close" datax-dismiss="modal" aria-label="Close"></button>
+                <!-- <button type="button" class="btn-close" datax-dismiss="modal" aria-label="Close"></button> -->
             </div>
             <div class="modal-body">
-                Are you sure you want to buy {{ item.name }} for {{ item.price }}$ ?
+
                 <form action="" method="POST">
                     {{ purchase_form.hidden_tag() }}
+                    <h4 class="text-center mb-3">Are you sure you want to buy {{ item.name }} for {{ item.price }}$ ?
+                    </h4>
+                    <h6 class="text-center">
+                        By clicking "Purchase", you will purchase this item.
+                    </h6>
+                    {{ purchase_form.submit(class="btn btn-outline-success btn-block")}}
                 </form>
             </div>
             <div class="modal-footer">
