@@ -22,11 +22,9 @@ def market_page():
         print(p_item_object)
         if p_item_object:
             if current_user.can_purchase(p_item_object):
-                p_item_object.owner = current_user.id
-                current_user.budget -= p_item_object.price
-                db.session.commit()
+                p_item_object.buy(current_user)
                 flash(
-                    f'{p_item_object.name} has been successfully purchased for {p_item_object.price}',
+                    f'{p_item_object.name} has been successfully purchased for {p_item_object.price}$',
                     category='success')
             else:
                 flash(
